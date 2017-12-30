@@ -1,0 +1,58 @@
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.example.user.orderproduct.activity.LogInActivity">
+    
+    <data>
+        <variable
+            name="logInModel"
+            type="com.example.user.orderproduct.ModelClass.LogInModel"/>
+        <variable
+            name="activityLogIn"
+            type="com.example.user.orderproduct.activity.LogInActivity"/>
+    </data>
+    
+    <LinearLayout 
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:layout_margin="5dp"
+        android:padding="5dp">
+
+
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="3dp"
+            android:hint="E-Mail">
+
+            <android.support.design.widget.TextInputEditText
+                android:id="@+id/etEmailLogIn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textEmailAddress"
+                android:text="@={logInModel.eMail}"/>
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="3dp"
+            android:hint="Password">
+
+            <android.support.design.widget.TextInputEditText
+                android:id="@+id/etPasswordLogIn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@={logInModel.passWord}"/>
+        </android.support.design.widget.TextInputLayout>
+
+        <Button
+            android:id="@+id/btnLogIn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Log In"
+            android:onClick="@{()->activityLogIn.logInClick()}"/>
+    </LinearLayout>
+</layout>
